@@ -1,0 +1,229 @@
+{
+  "county": "Dakota",
+  "source": "https://enterprise.gisdata.mn.gov/aghost/rest/services/us_mn_state_mngeo/plan_parcels_open/FeatureServer/1/query?f=json&where=UPPER%28co_name%29+%3D+%27DAKOTA%27&outFields=objectid%2Ccounty_pin%2Cco_name%2Cyear_built%2Cemv_total%2Cuseclass1%2Cacres_poly&returnGeometry=false&orderByFields=objectid&resultRecordCount=20",
+  "status": 200,
+  "features": [
+    {
+      "attributes": {
+        "objectid": 13,
+        "county_pin": "368390010271",
+        "co_name": "Dakota",
+        "year_built": 1932,
+        "emv_total": 238800,
+        "useclass1": "Residential",
+        "acres_poly": 0.1548515
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 20,
+        "county_pin": "011658007100",
+        "co_name": "Dakota",
+        "year_built": 1995,
+        "emv_total": 739300,
+        "useclass1": "Residential",
+        "acres_poly": 0.32408476
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 39,
+        "county_pin": "228410002220",
+        "co_name": "Dakota",
+        "year_built": 2004,
+        "emv_total": 402500,
+        "useclass1": "Residential",
+        "acres_poly": 0.17203068
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 42,
+        "county_pin": "361990101110",
+        "co_name": "Dakota",
+        "year_built": 0,
+        "emv_total": 57400,
+        "useclass1": "Residential",
+        "acres_poly": 0.27239037
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 69,
+        "county_pin": "013240102130",
+        "co_name": "Dakota",
+        "year_built": 1982,
+        "emv_total": 468000,
+        "useclass1": "Residential",
+        "acres_poly": 0.43433556
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 70,
+        "county_pin": "026410203070",
+        "co_name": "Dakota",
+        "year_built": 1964,
+        "emv_total": 363100,
+        "useclass1": "Residential",
+        "acres_poly": 0.26515041
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 95,
+        "county_pin": "108435201210",
+        "co_name": "Dakota",
+        "year_built": 1975,
+        "emv_total": 387300,
+        "useclass1": "Residential",
+        "acres_poly": 0.48999497
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 96,
+        "county_pin": "277643001010",
+        "co_name": "Dakota",
+        "year_built": 1997,
+        "emv_total": 620200,
+        "useclass1": "Residential",
+        "acres_poly": 0.74950511
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 103,
+        "county_pin": "122450003020",
+        "co_name": "Dakota",
+        "year_built": 2001,
+        "emv_total": 498500,
+        "useclass1": "Residential",
+        "acres_poly": 0.31964557
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 139,
+        "county_pin": "221853605030",
+        "co_name": "Dakota",
+        "year_built": 2013,
+        "emv_total": 634400,
+        "useclass1": "Residential",
+        "acres_poly": 0.25345906
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 147,
+        "county_pin": "221192004040",
+        "co_name": "Dakota",
+        "year_built": 2020,
+        "emv_total": 680900,
+        "useclass1": "Residential",
+        "acres_poly": 0.42752001
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 163,
+        "county_pin": "341635004110",
+        "co_name": "Dakota",
+        "year_built": 2021,
+        "emv_total": 511900,
+        "useclass1": "Residential",
+        "acres_poly": 0.21259526
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 195,
+        "county_pin": "024060102060",
+        "co_name": "Dakota",
+        "year_built": 1988,
+        "emv_total": 220300,
+        "useclass1": "Residential-Townhouse",
+        "acres_poly": 0.11941922
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 196,
+        "county_pin": "381320001010",
+        "co_name": "Dakota",
+        "year_built": 1962,
+        "emv_total": 1551400,
+        "useclass1": "Residential",
+        "acres_poly": 3.54787863
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 203,
+        "county_pin": "203640001054",
+        "co_name": "Dakota",
+        "year_built": 1986,
+        "emv_total": 580700,
+        "useclass1": "Residential",
+        "acres_poly": 2.03739559
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 225,
+        "county_pin": "021537705140",
+        "co_name": "Dakota",
+        "year_built": 1979,
+        "emv_total": 263200,
+        "useclass1": "Residential-Townhouse",
+        "acres_poly": 0.13884259
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 226,
+        "county_pin": "104910101210",
+        "co_name": "Dakota",
+        "year_built": 2025,
+        "emv_total": 237600,
+        "useclass1": "Exempt",
+        "acres_poly": 0.0258042
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 241,
+        "county_pin": "221775005030",
+        "co_name": "Dakota",
+        "year_built": 1971,
+        "emv_total": 403500,
+        "useclass1": "Residential",
+        "acres_poly": 0.3784672
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 257,
+        "county_pin": "222117205030",
+        "co_name": "Dakota",
+        "year_built": 1970,
+        "emv_total": 283900,
+        "useclass1": "Residential",
+        "acres_poly": 0.25345821
+      }
+    },
+    {
+      "attributes": {
+        "objectid": 289,
+        "county_pin": "196330000162",
+        "co_name": "Dakota",
+        "year_built": 1961,
+        "emv_total": 293300,
+        "useclass1": "Residential",
+        "acres_poly": 0.23258451
+      }
+    }
+  ],
+  "error": null,
+  "exceededTransferLimit": true
+}

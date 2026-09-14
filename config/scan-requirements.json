@@ -1,0 +1,30 @@
+{
+  "variation": 3,
+  "county": "Dakota",
+  "industry": "industrial maintenance",
+  "source_layer": "https://enterprise.gisdata.mn.gov/aghost/rest/services/us_mn_state_mngeo/plan_parcels_open/FeatureServer/1",
+  "parcel_id_field": "county_pin",
+  "year_built_field": "year_built",
+  "county_field": "co_name",
+  "value_field": "emv_total",
+  "coordinate_system": 26915,
+  "radius_km_max": 3,
+  "default_min_age": 35,
+  "result_limit": 20,
+  "database_schema": "t332_v3",
+  "public_allowlist": [
+    "parcel_id",
+    "county",
+    "year_built",
+    "building_age",
+    "estimated_market_value",
+    "use_class",
+    "area_acres",
+    "source_url"
+  ],
+  "known_limits": [
+    "year_built describes building age, not roof age",
+    "parcel source values may be null",
+    "initial source sample is bounded to 20 records, not a county inventory"
+  ]
+}
