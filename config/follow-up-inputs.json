@@ -1,0 +1,36 @@
+{
+  "variation": 3,
+  "excluded_parcel": null,
+  "exclusion_reason": null,
+  "reserved_additions": {
+    "source": "https://enterprise.gisdata.mn.gov/aghost/rest/services/us_mn_state_mngeo/plan_parcels_open/FeatureServer/1/query?f=json&where=UPPER%28co_name%29+%3D+%27DAKOTA%27&outFields=objectid%2Ccounty_pin%2Cco_name%2Cyear_built%2Cemv_total%2Cuseclass1%2Cacres_poly&returnGeometry=false&orderByFields=objectid&resultOffset=20&resultRecordCount=2",
+    "status": 200,
+    "features": [
+      {
+        "attributes": {
+          "objectid": 293,
+          "county_pin": "202710001180",
+          "co_name": "Dakota",
+          "year_built": 2007,
+          "emv_total": 1497000,
+          "useclass1": "Residential",
+          "acres_poly": 2.65276962
+        }
+      },
+      {
+        "attributes": {
+          "objectid": 311,
+          "county_pin": "220260007010",
+          "co_name": "Dakota",
+          "year_built": 1973,
+          "emv_total": 166200,
+          "useclass1": "Commercial-Preferred",
+          "acres_poly": 3.01892347
+        }
+      }
+    ],
+    "error": null
+  },
+  "rollback": "Record the created output's ID and state; restore only that output using the observed baseline, then reapply. Preserve all original source records.",
+  "scope": "All future operations remain within this variation's repository, deployment projects and database schema."
+}

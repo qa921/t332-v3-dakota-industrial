@@ -26,5 +26,20 @@
     "year_built describes building age, not roof age",
     "parcel source values may be null",
     "initial source sample is bounded to 20 records, not a county inventory"
-  ]
+  ],
+  "anchor": {
+    "attributes": {
+      "objectid": 13,
+      "county_pin": "368390010271",
+      "co_name": "Dakota"
+    },
+    "centroid": {
+      "x": -93.05103759725014,
+      "y": 44.88843089724041
+    }
+  },
+  "anchor_source": "https://enterprise.gisdata.mn.gov/aghost/rest/services/us_mn_state_mngeo/plan_parcels_open/FeatureServer/1/query?f=json&where=UPPER%28co_name%29+%3D+%27DAKOTA%27&outFields=objectid%2Ccounty_pin%2Cco_name&returnGeometry=false&returnCentroid=true&outSR=4326&orderByFields=objectid&resultRecordCount=1",
+  "initial_radius_km": 1,
+  "backend_url": "https://t332-v3-dakota-industrial.onrender.com",
+  "vercel_project_id": "prj_8QOgH7CfBo9ydodnYPCnDaDYvsNo"
 }
