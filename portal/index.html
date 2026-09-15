@@ -1,1 +1,81 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><title>Dakota property portal baseline</title><h1>Dakota property portal</h1><p>Original proposed industrial maintenance workflow. Nearby opportunity scanning is not implemented.</p><nav><a href="/">Overview</a></nav></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dakota property portal</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:52rem;margin:2rem auto;padding:0 1rem;color:#1a1a1a}
+form{display:flex;flex-wrap:wrap;gap:0.75rem;align-items:flex-end;margin:1rem 0}
+label{display:flex;flex-direction:column;font-size:0.85rem;gap:0.25rem}
+input{padding:0.4rem;border:1px solid #999;border-radius:4px;width:9rem}
+button{padding:0.5rem 1rem;border:0;border-radius:4px;background:#1f4e79;color:#fff;cursor:pointer}
+#status{margin:1rem 0;font-weight:500}
+table{border-collapse:collapse;width:100%;font-size:0.9rem}
+th,td{border:1px solid #ccc;padding:0.35rem 0.5rem;text-align:left}
+th{background:#f0f4f8}
+</style>
+</head>
+<body>
+<h1>Dakota property portal</h1>
+<p>Original proposed industrial maintenance workflow. Search public parcel records within a radius of up to 3 km.</p>
+<nav><a href="/">Overview</a></nav>
+<form id="search">
+  <label>Latitude <input name="lat" type="number" step="any" value="44.8884308" required></label>
+  <label>Longitude <input name="lon" type="number" step="any" value="-93.0510375" required></label>
+  <label>Radius (km, max 3) <input name="radius_km" type="number" min="0.1" max="3" step="0.1" value="1" required></label>
+  <label>Minimum building age (years) <input name="min_age" type="number" min="0" step="1" value="35" required></label>
+  <button type="submit">Search nearby</button>
+</form>
+<p id="status" role="status"></p>
+<table id="results" hidden>
+  <thead><tr><th>Parcel</th><th>County</th><th>Year built</th><th>Building age</th><th>Estimated market value</th><th>Use class</th><th>Area (acres)</th></tr></thead>
+  <tbody></tbody>
+</table>
+<script>
+const form = document.getElementById('search');
+const statusEl = document.getElementById('status');
+const table = document.getElementById('results');
+const tbody = table.querySelector('tbody');
+const FALLBACK = 'Nearby property data is temporarily unavailable. Please try again in a few minutes. If the problem continues, contact support.';
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  statusEl.textContent = 'Searching\u2026';
+  table.hidden = true; tbody.innerHTML = '';
+  const data = new FormData(form);
+  const params = new URLSearchParams({
+    lat: data.get('lat'),
+    lon: data.get('lon'),
+    radius_km: Math.min(Number(data.get('radius_km')) || 1, 3),
+    min_age: data.get('min_age') || 35
+  });
+  try {
+    const response = await fetch('/api/territory?' + params.toString());
+    const body = await response.json().catch(() => null);
+    if (!response.ok || !body || body.available === false) {
+      statusEl.textContent = (body && typeof body.reason === 'string') ? body.reason : FALLBACK;
+      return;
+    }
+    const properties = body.properties || [];
+    if (!properties.length) {
+      statusEl.textContent = 'No parcels matched this search. Try widening the radius (up to 3 km) or lowering the minimum building age.';
+      return;
+    }
+    statusEl.textContent = properties.length + ' parcel(s) found within ' + (body.radius_km || '') + ' km.';
+    for (const p of properties) {
+      const row = document.createElement('tr');
+      for (const value of [p.parcel_id, p.county, p.year_built ?? '\u2014', p.building_age ?? '\u2014', p.estimated_market_value ?? '\u2014', p.use_class ?? '\u2014', p.area_acres ?? '\u2014']) {
+        const cell = document.createElement('td');
+        cell.textContent = value;
+        row.appendChild(cell);
+      }
+      tbody.appendChild(row);
+    }
+    table.hidden = false;
+  } catch (e) {
+    statusEl.textContent = FALLBACK;
+  }
+});
+</script>
+</body>
+</html>
